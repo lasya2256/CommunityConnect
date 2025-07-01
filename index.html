@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Connect</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.2.umd.min.js" type="application/javascript"></script>
+    <link rel="icon" href="path/to/favicon.ico">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <span class="hamburger-btn material-symbols-rounded">menu</span>
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="logo">
+                <h2>Community Connect</h2>
+            </a>
+            <ul class="links">
+                <span class="close-btn material-symbols-rounded">close</span>
+                <li><a href="#">Home</a></li>
+                <li class="dropdown"><a href="#">Community</a>
+                    <div class="dropdown-content">
+                        <a href="Community.html">Available Groups</a>
+                        <a href="discussion.html">Participate in discussion</a>
+                        <a href="Announcements.html">Announcements</a>
+                    </div>
+                </li>
+                <li class="dropdown"><a href="Resources.html">Resources</a></li>
+                <li><a href="https://www.gannon.edu/events">Events</a></li>
+                <li><a href="Profile.html">Profile</a></li>
+                <li id="logout" style="display: none;"><a href="#">Logout</a></li>
+            </ul>
+            <button id="login-btn" class="login-btn">LOG IN</button>
+        </nav>
+    </header>
+    <div class="blur-bg-overlay"></div>
+    <div class="form-popup">
+        <span class="close-btn material-symbols-rounded">close</span>
+        <div class="form-box login">
+            <div class="form-details">
+                <h2>Welcome Back</h2>
+                <p>Please log in using your personal information to stay connected with us.</p>
+            </div>
+            <div class="form-content">
+                <h2>LOGIN</h2>
+                <form id="login-form" action="#">
+                    <div class="input-field">
+                        <input type="text" id="email" name="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <a href="#" class="forgot-pass-link">Forgot password?</a>
+                    <button type="submit">Log In</button>
+                </form>
+                <div class="bottom-link">
+                    Don't have an account?
+                    <a href="#" id="signup-link">Signup</a>
+                </div>
+            </div>
+        </div>
+        <div class="form-box signup">
+            <div class="form-details">
+                <h2>Create Account</h2>
+                <p>To become a part of our community, please sign up using your personal information.</p>
+            </div>
+            <div class="form-content">
+                <h2>SIGNUP</h2>
+                <form id="signup-form" action="#">
+                    <div class="input-field">
+                        <input type="text" id="signup-email" name="email" required>
+                        <label for="signup-email">Enter your email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="signup-password" name="password" required>
+                        <label for="signup-password">Create password</label>
+                        <div id="password-strength" class="password-strength"></div>
+                    </div>
+                    <div class="policy-text">
+                        <input type="checkbox" id="policy" required>
+                        <label for="policy">I agree to the <a href="TermsofUse.html" class="option">Terms & Conditions</a></label>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <div class="bottom-link">
+                    Already have an account?
+                    <a href="#" id="login-link">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <section class="feature-section">
+            <div class="container">
+                <div class="feature-header">
+                    <h3 class="feature-title">Platform Features</h3>
+                    <p class="feature-description">Explore the innovative features designed to facilitate seamless connections and shared learning in your local community.</p>
+                </div>
+                <div class="feature-list">
+                    <div class="feature">
+                        <span class="material-symbols-rounded feature-icon">account_balance_wallet</span>
+                        <h3 class="feature-name">Secure Wallet</h3>
+                        <p class="feature-info">Our encrypted digital wallet ensures safe transactions and privacy within the community space.</p>
+                    </div>
+                    <div class="feature">
+                        <span class="material-symbols-rounded feature-icon">forum</span>
+                        <h3 class="feature-name">Smart Forums</h3>
+                        <p class="feature-info">Engage in topic-driven forums with blockchain verification for authentic and meaningful interactions.</p>
+                    </div>
+                    <div class="feature">
+                        <span class="material-symbols-rounded feature-icon">school</span>
+                        <h3 class="feature-name">Live Learning</h3>
+                        <p class="feature-info">Participate in live workshops and courses to empower your personal and professional development.</p>
+                    </div>
+                </div>
+            </div>
+            <section class="video-container">
+                <div class="video-item">
+                  <iframe src="https://www.youtube.com/embed/YVgfHZMFFFQ" title="How secure is CommunityConnect" allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="images/Community_Connect.mp4" title="Community_Connect" allowfullscreen></iframe>
+                </div>
+            </section>
+            <div>
+                <h2>Frequently asked questions</h2>
+                <div>
+                    <h4>How secure is CommunityConnect?</h4>
+                    <p>We employ advanced cryptographic techniques ensuring all data and transactions are protected within our community.</p>
+                </div>
+                <div>
+                    <h4>Can anyone join a forum?</h4>
+                    <p>Yes, CommunityConnect is open to everyone, but certain forums can be made private by their creators for focused discussions.</p>
+                </div>
+                <div>
+                    <h4>What is blockchain?</h4>
+                    <p>Blockchain is a secure, decentralized ledger that ensures transparency and security in digital transactions and interactions.</p>
+                </div>
+                <div>
+                    <h4>Are there fees to use CommunityConnect?</h4>
+                    <p>Basic community engagement on Community Connect is free, but some premium features and educational courses may have associated costs.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <p>© 2024 CommunityConnect</p>
+            <div>
+                <a href="https://www.facebook.com/">Facebook</a>
+                <a href="https://www.instagram.com/">Instagram</a>
+                <a href="https://www.twitter.com/">Twitter</a>
+                <a href="https://www.youtube.com/">YouTube</a>
+            </div>
+            <nav>
+                <a href="#">Features</a>
+                <a href="community.html">Community</a>
+                <a href="resources.html">Resources</a>
+                <a href="https://www.gannon.edu/events">Events</a>
+                <a href="https://gannon.teamdynamix.com/TDClient/2057/Portal/KB/ArticleDet?ID=43941">Blog</a>
+                <a href="AboutUs.html">About Us</a>
+                <a href="Contact.html">Contact</a>
+                <a href="privacypolicy.html">Privacy Policy</a>
+                <a href="TermsofUse.html">Terms of Use</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+            </nav>
+        </div>
+    </footer>
+    <script type="module">
+        document.addEventListener('DOMContentLoaded', async () => {
+            const UserAuthContractAddress = "0x86030dd432EE01c7Cf5bFEDbCeE8ad2E12f9E453";
+            const UserAuthABI = [
+                {
+                    "inputs": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "newPasswordHash",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "name": "changePassword",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": false,
+                            "internalType": "address",
+                            "name": "userAddress",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "PasswordChanged",
+                    "type": "event"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "string",
+                            "name": "email",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "passwordHash",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "name": "registerUser",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": false,
+                            "internalType": "address",
+                            "name": "userAddress",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": false,
+                            "internalType": "string",
+                            "name": "email",
+                            "type": "string"
+                        }
+                    ],
+                    "name": "UserRegistered",
+                    "type": "event"
+                }
+            ];
+
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            await provider.send("eth_requestAccounts", []);
+            const signer = provider.getSigner();
+            const UserAuth = new ethers.Contract(UserAuthContractAddress, UserAuthABI, signer);
+
+            async function registerUser(email, password) {
+                const passwordHash = ethers.utils.id(password);
+                const tx = await UserAuth.registerUser(email, passwordHash);
+                await tx.wait();
+                console.log('Registration successful');
+            }
+
+            async function changePassword(newPassword) {
+                const newPasswordHash = ethers.utils.id(newPassword);
+                const tx = await UserAuth.changePassword(newPasswordHash);
+                await tx.wait();
+                console.log('Password change successful');
+            }
+            await init();
+        });
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

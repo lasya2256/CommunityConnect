@@ -1,0 +1,134 @@
+/* Importing Google font - Open Sans */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    color: #161616;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #FCB041; /* A light background color that matches the image */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    color: #da4343;
+    text-align: center;
+    padding: 20px;
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+header h1,
+header nav {
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #d0b625; /* Change this to your desired color */
+    text-decoration: none; /* Removes the underline from the link */
+    font-size: 24px;
+}
+
+nav a:hover {
+    color: #28762d; /* Change this to the color you want for hover */
+}
+
+header p {
+    margin: 0;
+    flex: 1;
+    text-align: center;
+}
+
+#resources-link {
+    color: #1d4d01c8; /* Change this to your desired color */
+    text-decoration: none; /* Removes the underline from the link */
+    font-size: 30px;
+}
+
+#resources-link:hover {
+    color: #094e0ec4; /* Change this to the color you want for hover */
+}
+#home-link {
+    color: #095803e3; /* Change this to your desired color */
+    text-decoration: none; /* Removes the underline from the link */
+    font-size: 30px;
+}
+
+#home-link:hover {
+    color: #28762d; /* Change this to the color you want for hover */
+}
+main {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the content */
+}
+.video-item {
+    margin-right: 20px;
+    flex: 0 0 auto;
+}
+.video-section {
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Ensures the iframes stay in a line */
+    padding: 20px 0; /* Adds some padding above and below the video section */
+    margin-bottom: 30px; /* Adds some margin below the video section */
+  }
+  
+  .video-container {
+    display: inline-block; /* Displays video container inline for horizontal layout */
+    vertical-align: top; /* Aligns videos to the top */
+    white-space: normal; /* Resets white-space for the contents of the video container */
+    margin-right: 20px; /* Adds spacing between video containers */
+    margin-bottom: 30px;
+  }
+  
+  iframe {
+    width: 400px; /* Width of the video */
+    height: 215px; /* Height of the video */
+  }
+  
+  .scroll-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .video-slider-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .video-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  
+  
+  .left-scroll {
+    left: 0;
+  }
+  
+  .right-scroll {
+    right: 0;
+  }
+  

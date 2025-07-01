@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="User Profile Page">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/vja0nps.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="Profilestyle.css">
+    <title>User Profile</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="logo">
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="MyProfile.html">My Profile</a></li>
+                    <li><a href="#!">My Posts</a></li>
+                    <li><a href="#!">Settings</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile-container">
+            <div class="row">
+                <div class="col s12 m4 l3">
+                    <ul class="collection with-header">
+                        <li class="collection-header">
+                            <h4>User Details</h4>
+                        </li>
+                        <li class="collection-item">
+                            <div class="user-image">
+                                <img src="#" alt="User Avatar" class="circle responsive-img">
+                                <!-- Form to upload new avatar -->
+                                <form action="upload.php" method="post" enctype="multipart/form-data">
+                                    <div class="file-field input-field">
+                                        <div class="btn">
+                                            <span>File</span>
+                                            <input type="file" name="avatar" accept="image/png, image/jpeg">
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text" placeholder="Upload new avatar">
+                                        </div>
+                                    </div>
+                                    <button class="btn waves-effect waves-light" type="submit">Upload Image</button>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="collection with-header">
+                        <li class="collection-header">
+                            <h5>Navigation</h5>
+                        </li>
+                        <li class="collection-item"><a href="index.html">Home</a></li>
+                        <li class="collection-item">
+                            <a href="#">My Profile</a>
+                        </li>
+                        <li class="collection-item">
+                            <a href="#!">My Posts</a>
+                        </li>
+                        <li class="collection-item">
+                            <a href="#!">Settings</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col s12 m8 l9">
+                    <!-- User Info Display -->
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Change Password</span>
+                            <div class="row">
+                                <form class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="current_password" type="password" class="validate">
+                                            <label for="current_password">Current Password</label>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <input id="new_password" type="password" class="validate">
+                                            <label for="new_password">New Password</label>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <input id="confirm_new_password" type="password" class="validate">
+                                            <label for="confirm_new_password">Confirm New Password</label>
+                                        </div>
+                                        <div class="col s12">
+                                            <button class="btn waves-effect waves-light" type="submit" name="action">Update Password
+                                                <i class="material-icons right">update</i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ipfs/dist/index.min.js"></script>
+    <script>
+        async function uploadImage() {
+            const file = document.getElementById('avatarInput').files[0];
+            if (!file) return;
+        
+            try {
+                const ipfs = await Ipfs.create(); // Connect to IPFS
+                const result = await ipfs.add(file);
+                const imageHash = result.path;
+                console.log('IPFS result hash:', imageHash);
+        
+                // Update the image display
+                document.getElementById('userAvatar').src = `https://ipfs.io/ipfs/${imageHash}`;
+        
+                // Now store this hash to Ethereum
+                await storeImageHashToEthereum(imageHash);
+            } catch (error) {
+                console.error('Error uploading file:', error);
+            }
+        }
+        
+        async function storeImageHashToEthereum(imageHash) {
+            if (!window.ethereum) return alert('Please install MetaMask to interact.');
+        
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            await provider.send('eth_requestAccounts', []); // Request access
+            const signer = provider.getSigner();
+            const contract = new ethers.Contract(contractAddress, contractABI, signer);
+            
+            try {
+                const tx = await contract.storeImageHash(imageHash);
+                await tx.wait();
+                console.log('Image hash stored on Ethereum successfully');
+            } catch (error) {
+                console.error('Failed to store image hash:', error);
+            }
+        }
+        </script>
+</body>
+</html>

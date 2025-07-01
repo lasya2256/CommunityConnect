@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgba(208, 205, 205, 0.632); 
+    background-image: url('./images/gannon-bg.jpg'); /* Replace with your actual image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* To make the background image fixed during scroll */
+}
+
+header {
+    background-color: rgba(208, 205, 205, 0.632); /* Semi-transparent background */
+    padding: 1rem;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Adjust the size to fit your logo */
+    margin-right: 10px;
+}
+
+.logo h2 {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+#home-link {
+    color: #d0b625; /* Change this to your desired color */
+    text-decoration: none; /* Removes the underline from the link */
+    padding-left: 30px;
+}
+
+#home-link:hover {
+    color: #28762d; /* Change this to the color you want for hover */
+}
+
+#search-container {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#resource-search {
+    padding: 0.5rem;
+    width: 250px; /* Adjust width as needed */
+    margin-right: 0.5rem;
+    border: none;
+    border-radius: 5px; /* Rounded corners for the search input */
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: #FFC107; /* Color to match the 'Home' link */
+    border: none;
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+main {
+    padding: 2rem;
+}
+
+/* Article styles */
+article {
+    background-color: rgba(207, 204, 204, 0.943); /* Semi-transparent background for articles */
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-left: 5px solid #f4d062; /* Solid line on the left of the articles */
+}
+
+article h2 {
+    margin-bottom: 0.5rem;
+}
+
+article h2 a {
+    color: #6f5710; /* Color to match the 'Home' link */
+    text-decoration: none;
+}
+
+article p {
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    header, main {
+        background-image: none;
+    }
+}

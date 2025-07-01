@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Groups</title>
+    <link rel="stylesheet" href="Communitystyles.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html" id="home-link">Home</a></h1> <h1>Community Groups</h1>
+        <div id="search-container">
+            <input type="search" id="group-search" name="q"
+                   placeholder="Search groups..."
+                   aria-label="Search through community groups">
+            <button type="submit">Search</button>
+        </div>
+    </header>
+    <main>
+        <a href="#"><button id="createGroupBtn">Create Group</button>
+            <div id="createGroupModal" class="modal">
+                <!-- Modal content -->
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create Group</h2>
+                <!-- The form inside the modal -->
+            <form id="createGroupForm">
+            <label for="category">Select Category</label>
+            <select id="category" name="category">
+                    <!-- Options... -->
+                <option value="general">select category</option>
+                <option value="blockchain">Blockchain</option>
+                <option value="health">Health</option>
+                <option value="education">Education</option>
+                <option value="technology">Technology</option>
+                <option value="sports">Sports</option>
+                <option value="music">Music</option>
+                <option value="art">Art</option>
+                <option value="food">Food</option>
+                <option value="travel">Travel</option>
+            </select>
+            <label for="groupName">Group Name</label>
+            <input type="text" id="groupName" name="groupName" required>
+            <label for="groupDescription">Group Description</label>
+            <textarea id="groupDescription" name="groupDescription" required></textarea>
+            <label for="attachImage">Attach Image</label>
+            <input type="file" id="attachImage" name="attachImage">
+            <input type="submit" value="Create Group">
+            </form>
+        </div>
+        </div>
+        </a>
+        <section class="community-groups">
+            <div class="group-card" id="Blockchain_Enthusiasts">
+                <h3><span class="group-name">Blockchain Enthusiasts</span></h3>
+                <p>Description: A group for discussing blockchain technology and its applications.</p>
+                <button>Join Group</button>
+            </div>
+            <div class="group-card" id="Health_and_Wellness">
+                <h3><span class="group-name">Health and Wellness</span></h3>
+                <p>Description: A community focused on sharing tips and resources for healthy living.</p>
+                <button>Join Group</button>
+            </div>
+            <div class="group-card" id="Education_Innovators">
+                <h3><span class="group-name">Education Innovators</span></h3>
+                <p>Description: A group for educators and learners to share innovative teaching methods.</p>
+                <button>Join Group</button>
+            </div>
+            <div class="group-card" id="Technology_Trends">
+                <h3><span class="group-name">Technology Trends</span></h3>
+                <p>Description: Explore the latest trends in technology and discuss their impact on society.</p>
+                <button>Join Group</button>
+            </div>
+            <div class="group-card" id="Sports_Enthusiasts">
+                <h3><span class="group-name">Sports Enthusiasts</span></h3>
+                <p>Description: Connect with fellow sports fans to discuss games, players, and more.</p>
+                <button>Join Group</button>
+            </div>
+            <div class="group-card" id="Music_Lovers">
+                <h3><span class="group-name">Music Lovers</span></h3>
+                <p>Description: Share your favorite music, discover new artists, and discuss music genres.</p>
+                <button>Join Group</button>
+            </div>
+            <div class="group-card" id="Art_Appreciation">
+                <h3><span class="group-name">Art Appreciation</span></h3>
+                <p>Description: Join this group to appreciate and discuss various forms of art and creativity.</p>
+                <button>Join Group</button>
+            </div>
+            <div class="group-card" id="Foodies_Unite">
+                <h3><span class ="group-name">Foodies Unite</span></h3>
+                <p>Description: A group for food lovers to share recipes, restaurant recommendations, and more.</p>
+                <button>Join Group</button>
+            </div>
+            <div class="group-card" id="Book_Club">
+                <h3><span class="group-name">Book Club</span></h3>
+                <p>Description: Join our book club to read and discuss books with fellow bookworms.</p>
+                <button>Join Group</button>
+            </div>
+            <div class="group-card" id="Travel_Enthusiasts">
+                <h3><span class="group-name">Travel Enthusiasts</span></h3>
+                <p>Description: Connect with travelers, share travel stories, and get inspired for your next trip.</p>
+                <button>Join Group</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="community.js"></script>

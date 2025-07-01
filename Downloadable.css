@@ -1,0 +1,60 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #FCB041; /* A light background color that matches the image */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1 {
+    color: white;
+    padding: 20px;
+    text-align: center;
+    gap: 20px;
+}
+
+#home-link:hover, #resources-link:hover {
+    color: #1422a3; /* Change this to the color you want for hover */
+}
+
+h1 a {
+    color: white;
+    text-decoration: none;
+    margin: 0 40px;
+}
+
+#materials {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.item {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    width: 20%;
+    text-align: center;
+}
+
+.item p {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}

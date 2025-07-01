@@ -1,0 +1,66 @@
+/* Add styles specific to the profile page here */
+
+.profile-details {
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.change-password {
+    max-width: 400px;
+    margin: auto;
+}
+
+.change-password label {
+    display: block;
+    margin-top: 10px;
+}
+
+.change-password input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.change-password button {
+    background-color: #12E6C8; /* Using the color palette */
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif; /* This should be defined globally if not already */
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4; /* Light grey background */
+}
+
+header, footer {
+    background-color: #000; /* Black background for header and footer */
+    color: white;
+    padding: 10px 20px;
+}
+
+header a.logo img {
+    height: 50px; /* Adjust the logo size */
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+header h2 {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
+
+nav {
+    background: transparent;
+    box-shadow: none; /* Removes Materialize default shadow */
+}
+
+nav ul li a {
+    color: white; /* Ensures nav links are white */
+}

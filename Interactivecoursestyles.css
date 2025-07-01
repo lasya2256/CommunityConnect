@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    color: #161616;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #FCB041; /* A light background color that matches the image */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    color: #da4343;
+    text-align: center;
+    padding: 20px;
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+header h1,
+header nav {
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #d0b625; /* Change this to your desired color */
+    text-decoration: none; /* Removes the underline from the link */
+    font-size: 24px;
+}
+
+nav a:hover {
+    color: #28762d; /* Change this to the color you want for hover */
+}
+
+header p {
+    margin: 0;
+    flex: 1;
+    text-align: center;
+}
+
+#resources-link {
+    color: #1d4d01c8; /* Change this to your desired color */
+    text-decoration: none; /* Removes the underline from the link */
+    font-size: 30px;
+}
+
+#resources-link:hover {
+    color: #094e0ec4; /* Change this to the color you want for hover */
+}
+#home-link {
+    color: #095803e3; /* Change this to your desired color */
+    text-decoration: none; /* Removes the underline from the link */
+    font-size: 30px;
+}
+
+#home-link:hover {
+    color: #28762d; /* Change this to the color you want for hover */
+}
+
+.container {
+    margin-top: 50px; 
+}
+
+/* Style for the course list */
+#course-list {
+    margin-bottom: 20px; 
+}
+
+/* Style for individual course card */
+.course {
+    margin-bottom: 10px; 
+}
+
+/* Style for the token balance section */
+#token-balance {
+    font-weight: bold;
+    margin-bottom: 10px; 
+}
+
+/* Style for the spend tokens button */
+#spend-token-btn {
+    margin-bottom: 20px;
+}

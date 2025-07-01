@@ -1,0 +1,641 @@
+/* Importing Google font - Open Sans */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* This makes sure that the main tag takes at least the height of the viewport */
+    padding-top: 60px; /* This accounts for your fixed header, adjust as needed */
+    padding-bottom: 60px; /* Adjust as needed for footer */
+    background-color: #0606069c;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body::before{
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom:0;
+    background: url("images/Gannon-University.jpg") center/cover no-repeat;
+    pointer-events: none;
+    z-index: -1;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 0 10px;
+}
+div {
+    display: block;
+}
+div h2 {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.navbar {
+    display: flex;
+    padding: 22px 0;
+    align-items: center;
+    justify-content: space-between;
+    color: #e99595;
+}
+
+.navbar .hamburger-btn {
+    display: none;
+    color: #F9A72B;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.navbar .logo {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar .logo img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.navbar .logo h2 {
+    color: #f57d9f;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.navbar .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: none;
+    color: #000;
+    cursor: pointer;
+}
+
+.navbar .links a {
+    color: #FCB041;
+    font-size: 1.4rem;
+    font-weight: 30;
+    text-decoration: none;
+    transition: 0.1s ease;
+}
+
+.navbar .links a:hover {
+    color: #8dcefd;
+}
+
+.navbar .login-btn {
+    border: none;
+    outline: none;
+    background: #67afe3;
+    color: #275360;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.navbar .login-btn:hover {
+    background: #07d977;
+}
+
+.form-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    max-width: 720px;
+    background: #504f4f;
+    border: 2px solid #fff;
+    transform: translate(-50%, -70%);
+}
+
+.show-popup .form-popup {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease, opacity 0.1s;
+}
+
+.form-popup .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #fcfcfc;
+    cursor: pointer;
+}
+
+.blur-bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: 0.1s ease;
+}
+
+.show-popup .blur-bg-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.form-popup .form-box {
+    display: flex;
+}
+
+.form-box .form-details {
+    width: 100%;
+    color: #fff;
+    max-width: 330px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login .form-details {
+    padding: 0 40px;
+    background: url("images/login-img.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.signup .form-details {
+    padding: 0 20px;
+    background: url("images/signup-img.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.input-field {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  cursor: pointer;
+  /* Adjust the below values as per your design */
+  right: 10px; 
+  top: 10px; 
+}
+
+.form-box .form-content {
+    width: 100%;
+    padding: 35px;
+}
+
+.form-box h2 {
+    text-align: center;
+    margin-bottom: 29px;
+}
+
+form .input-field {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.input-field input {
+    height: 100%;
+    width: 100%;
+    background: none;
+    outline: none;
+    font-size: 0.95rem;
+    padding: 0 15px;
+    border: 1px solid #717171;
+    border-radius: 3px;
+}
+
+.input-field input:focus {
+    border: 1px solid #00bcd4;
+}
+
+.input-field label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #f8f4f4;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) {
+    padding: 16px 15px 0;
+}
+
+.input-field input:is(:focus, :valid)~label {
+    transform: translateY(-120%);
+    color: #00bcd4;
+    font-size: 0.75rem;
+}
+
+.form-box a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.form-box a:hover {
+    text-decoration: underline;
+}
+
+form :where(.forgot-pass-link, .policy-text) {
+    display: inline-flex;
+    margin-top: 13px;
+    font-size: 0.95rem;
+}
+
+form button {
+    width: 100%;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 14px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 25px 0;
+    background: #030a0b;
+    transition: 0.2s ease;
+}
+
+form button:hover {
+    background: #0097a7;
+}
+
+.form-content .bottom-link {
+    text-align: center;
+}
+
+.form-popup .signup,
+.form-popup.show-signup .login {
+    display: none;
+}
+
+.form-popup.show-signup .signup {
+    display: flex;
+}
+
+.signup .policy-text {
+    display: flex;
+    margin-top: 14px;
+    align-items: center;
+}
+
+.signup .policy-text input {
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
+}
+
+#password-strength {
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+.toggle-password {
+    cursor: pointer;
+    position: absolute; /* Adjust as necessary to place correctly */
+    right: 10px; /* Adjust as necessary */
+    top: 10px; /* Adjust as necessary */
+  }  
+
+  .password-strength {
+    height: 5px;
+    width: 0%;
+    background-color: red;
+    transition: width 0.3s ease;
+}
+
+
+@media (max-width: 950px) {
+    .navbar :is(.hamburger-btn, .close-btn) {
+        display: block;
+    }
+
+    .navbar {
+        padding: 15px 0;
+    }
+
+    .navbar .logo img {
+        display: none;
+    }
+
+    .navbar .logo h2 {
+        font-size: 1.4rem;
+    }
+
+    .navbar .links {
+        position: fixed;
+        top: 0;
+        z-index: 10;
+        left: -100%;
+        display: block;
+        height: 100vh;
+        width: 100%;
+        padding-top: 60px;
+        text-align: center;
+        background: #fff;
+        transition: 0.2s ease;
+    }
+
+    .navbar .links.show-menu {
+        left: 0;
+    }
+
+    .navbar .links a {
+        display: inline-flex;
+        margin: 20px 0;
+        font-size: 1.2rem;
+        color: #000;
+    }
+
+    .navbar .links a:hover {
+        color: #b2d9de;
+    }
+
+    .navbar .login-btn {
+        font-size: 0.9rem;
+        padding: 7px 10px;
+    }
+}
+
+@media (max-width: 760px) {
+    .form-popup {
+        width: 95%;
+    }
+
+    .form-box .form-details {
+        display: none;
+    }
+
+    .form-box .form-content {
+        padding: 30px 20px;
+    }
+}
+
+/* Style the dropdown button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2e2d2df7;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(90, 88, 88, 0.817);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: rgb(181, 232, 191);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #646262}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
+  
+  /* Form Styles */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input[type=text], 
+  input[type=password], 
+  select, 
+  textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 14px 20px; /* Some padding */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 100%; /* Full width */
+  }
+  
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  .feature-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Centers the text for all children */
+  }
+  
+  .container {
+    max-width: 1200px; /* Adjust the max-width as needed */
+    width: 100%;
+    margin: auto; /* This will center your container */
+    padding: 50px 0; /* Adds padding to the top and bottom */
+    color: #ece1e1; /* text color */
+  }
+  
+  .feature-header {
+    margin-bottom: 50px; /* Adds space below the header */
+    font-size: 30px;
+  }
+  
+  .feature-list {
+    display: flex;
+    justify-content: center; /* This will space your feature items evenly */
+    flex-wrap: wrap; /* Allows feature items to wrap on smaller screens */
+  }
+  
+  .feature {
+    flex: 1 1 300px; /* Sets a max-width for each feature */
+    margin: 20px; /* Adds margin around each feature */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature-icon {
+    /* Style your icons here */
+    font-size: 48px; /* Example icon size */
+    margin-bottom: 20px; /* Adds space below the icon */
+    color: #00bcd4; /* Example icon color */
+  }
+  
+  .feature-name {
+    font-size: 24px; /* Example feature name size */
+    margin-bottom: 10px; /* Adds space below the feature name */
+  }
+  
+  .feature-info {
+    font-size: 16px; /* Example feature info size */
+  }
+
+  .video-container {
+    display: flex;
+    align-items: center; /* Align videos vertically */
+    justify-content: center; /* Center videos horizontally */
+    gap: 30px; /* Space between videos */
+  }
+  
+  .video-item {
+    flex: 1; /* Each video takes up equal width */
+    max-width: 85%; /* Optional: sets a max-width for each video */
+  }
+  
+
+/* FAQ Section Styles */
+section {
+    padding: 2rem;
+    font-family: Arial, sans-serif; /* Or your preferred font */
+}
+
+section header h2 {
+    color: #d3d6d3; /* Title color */
+    font-size: 2rem; /* Title size */
+}
+
+section header p {
+    color: #4dd87c; /* Subtitle color */
+    font-size: 1rem; /* Subtitle size */
+    margin-bottom: 1rem;
+}
+
+section div {
+    margin-bottom: 1rem;
+}
+
+section h4 {
+    color: #f9f6f6; /* Question color */
+    font-size: 1.25rem; /* Question font size */
+    font-weight: bold; /* Make the question bold */
+}
+
+section p {
+    color: #f7f4f4; /* Answer color */
+    font-size: 1rem; /* Answer font size */
+    margin-left: 1rem; /* Indent answers for better readability */
+}
+
+/* Footer Section Styles */
+footer {
+    background-color: #eecdcd; 
+    color: #333333;
+    padding: 1rem;
+    text-align: center; 
+    font-family: Arial, sans-serif;
+}
+
+footer p {
+    margin-bottom: 1rem; /* Spacing below the copyright text */
+}
+
+footer a {
+    color: #000000; /* Links color */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 0.5rem; /* Spacing between links */
+    font-size: 0.875rem; /* Link font size */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline on hover for better UX */
+}
+
+footer nav {
+    margin-top: 1rem;
+}
+
+.social-icons img {
+    width: 24px; /* Size of social media icons */
+    height: auto;
+    margin: 0 0.25rem; /* Spacing between icons */
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+    footer {
+        padding: 1rem 0.5rem;
+    }
+
+    footer a {
+        display: block; /* Stack the links vertically on small screens */
+        margin-bottom: 0.5rem; /* Spacing between stacked links */
+    }
+}
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Solidity Courses</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Interactivecoursestyles.css">
+</head>
+<body>
+    <header>
+        <h1>Educational Videos</h1>
+            <a href="index.html" id="home-link">Home</a>
+            <a href="Resources.html" id="resources-link">Resources</a>
+    </header>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Interactive Courses</h1>
+            <div id="course-list">
+                <div id="course-details" class="card-body">
+                    <!-- Course details will be populated here dynamically -->
+                    <h2>Blockchain</h2>
+                    <p>Learn the basics of blockchain technology.</p>
+                    <button class="btn btn-primary start-course" data-course-id="1">Start Course</button>
+                </div>
+                <!-- Courses will be populated here dynamically -->
+                <div class="course card mb-3">
+                    <div class="card-body">
+                        <h5 class="Blockchain">Blockchain</h5>
+                        <button class="btn btn-primary complete-course" data-course-id="1" data-reward="10">Complete Course</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h2>Token Balance</h2>
+            <p id="token-balance"></p>
+            <button class="btn btn-primary" id="spend-token-btn">Spend Tokens</button>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="interactiveCourses.js"></script>
+</body>
+</html>

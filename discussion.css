@@ -1,0 +1,75 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.discussion-container {
+    background-color: white;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#discussion-form {
+    margin-bottom: 30px;
+}
+
+#discussion-title,
+#discussion-content {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#discussion-content {
+    height: 100px;
+    resize: vertical;
+}
+
+#submit-discussion {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#submit-discussion:hover {
+    background-color: #0056b3;
+}
+
+.discussion-thread {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.discussion-thread-title {
+    font-weight: bold;
+}
+
+.discussion-thread-content {
+    margin-top: 10px;
+}
+
+.comment-section {
+    margin-top: 10px;
+}
+
+.comment {
+    background-color: #ffffff;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+}
+
+#discussion-threads {
+    margin-bottom: 30px;
+}
